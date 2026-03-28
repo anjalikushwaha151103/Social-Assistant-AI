@@ -1,0 +1,22 @@
+{
+  "name": "my-gpt-blog-app",
+  "version": "1.0.0",
+  "scripts": {
+    "install-all": "npm.cmd install && cd backend && npm.cmd install && cd ../frontend && npm.cmd install",
+    "backend": "cd backend && npm.cmd start",
+    "frontend": "cd frontend && npm.cmd start",
+    "dev": "concurrently \"npm.cmd run backend\" \"npm.cmd run frontend\"",
+    "start": "npm.cmd run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.14.0",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "openai": "^6.33.0"
+  }
+}
