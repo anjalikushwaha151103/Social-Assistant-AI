@@ -2,6 +2,9 @@
 
 Transform your ideas into high-engagement social media content for **Instagram, LinkedIn, and Twitter (X)** in seconds — powered by **Google Gemini AI**.
 
+![AI Social Media Assistant UI](assets/ui-screenshot.png)
+
+
 ---
 
 ## Key Features  
@@ -81,6 +84,8 @@ npm start             # Run both servers concurrently
 ## Project Structure  
 
 ```text
+├── assets/
+│   └── ui-screenshot.png      # Application UI screenshot
 ├── backend/
 │   ├── services/
 │   │   ├── geminiService.js   # Handles Gemini API calls
