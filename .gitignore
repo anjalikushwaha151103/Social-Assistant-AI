@@ -4,5 +4,5 @@ node_modules/
 dist/
 build/
 .env
-walkthrough
+walkthrough.md
 walkthrough2
