@@ -19,16 +19,40 @@ const ContentForm = ({
   return (
     <div className="form-section glass">
       <div className="input-group">
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
           <label>Your Idea / Content</label>
-          <div className="mode-selector" style={{ display: 'flex', gap: '1rem' }}>
+          <div className="mode-selector" style={{ 
+            display: 'flex', 
+            background: 'hsla(0, 0%, 0%, 0.3)', 
+            padding: '0.25rem', 
+            borderRadius: '0.75rem',
+            border: '1px solid var(--glass-border)'
+          }}>
             <span 
               onClick={() => setMode('generate')}
-              style={{ cursor: 'pointer', color: mode === 'generate' ? '#6366f1' : '#94a3b8', fontSize: '0.8rem', fontWeight: 'bold' }}
+              style={{ 
+                cursor: 'pointer', 
+                padding: '0.4rem 0.8rem',
+                borderRadius: '0.6rem',
+                backgroundColor: mode === 'generate' ? 'var(--primary)' : 'transparent',
+                color: mode === 'generate' ? '#fff' : 'var(--text-muted)', 
+                fontSize: '0.7rem', 
+                fontWeight: '800',
+                transition: 'all 0.3s ease'
+              }}
             >GENERATE</span>
             <span 
               onClick={() => setMode('rewrite')}
-              style={{ cursor: 'pointer', color: mode === 'rewrite' ? '#6366f1' : '#94a3b8', fontSize: '0.8rem', fontWeight: 'bold' }}
+              style={{ 
+                cursor: 'pointer', 
+                padding: '0.4rem 0.8rem',
+                borderRadius: '0.6rem',
+                backgroundColor: mode === 'rewrite' ? 'var(--primary)' : 'transparent',
+                color: mode === 'rewrite' ? '#fff' : 'var(--text-muted)', 
+                fontSize: '0.7rem', 
+                fontWeight: '800',
+                transition: 'all 0.3s ease'
+              }}
             >REWRITE</span>
           </div>
         </div>
@@ -76,7 +100,7 @@ const ContentForm = ({
         onClick={onGenerate}
         disabled={loading || !input.trim()}
       >
-        {loading ? "Magic in progress..." : (mode === 'generate' ? "Create Content ✨" : "Improve Content 🚀")}
+        {loading ? "Magic in progress..." : (mode === 'generate' ? "Create Content" : "Improve Content")}
       </button>
     </div>
   );

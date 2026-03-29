@@ -29,20 +29,29 @@ const OutputCard = ({ variation, platform, onCopy }) => {
     <div className="output-card glass">
       <div className="card-header">
         <span className="platform-badge">{getPlatformIcon()} {platform}</span>
-        <span className="engagement-score">Engagement: {engagementScore}/10</span>
+        <div className="engagement-score">
+          <span style={{ opacity: 0.6, fontSize: '0.7rem' }}>ENGAGEMENT</span>
+          <span>{engagementScore}/10</span>
+        </div>
       </div>
 
       <h3 className="output-hook">{hook}</h3>
       <p className="output-content">{content}</p>
-      {hashtags && <div className="output-hashtags">{hashtags}</div>}
+      {hashtags && (
+        <div className="output-hashtags">
+          {hashtags.split(' ').map((tag, i) => (
+            <span key={i} className="hashtag">{tag}</span>
+          ))}
+        </div>
+      )}
 
       <div className="card-actions">
         <button className="copy-btn" onClick={handleCopyFull}>
-          {copiedType === 'full' ? 'Copied! ✅' : 'Copy Full Post'}
+          {copiedType === 'full' ? 'Copied!' : '📋 Copy Full Post'}
         </button>
         {hashtags && (
-          <button className="copy-btn" onClick={handleCopyTags}>
-            {copiedType === 'tags' ? 'Tags Copied! ✅' : 'Copy Hashtags'}
+          <button className="copy-btn secondary" onClick={handleCopyTags}>
+            {copiedType === 'tags' ? '🏷️ Tags Copied!' : '🏷️ Copy Hashtags'}
           </button>
         )}
       </div>

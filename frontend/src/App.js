@@ -73,7 +73,7 @@ function App() {
         <div ref={resultsRef} className="results-section">
           {!loading && variations.length === 0 && !toast && (
             <div style={{ textAlign: 'center', opacity: 0.5, padding: '3rem' }}>
-              <h2>Start by entering your idea above 🚀</h2>
+              <h2>Start by entering your idea above</h2>
             </div>
           )}
 
